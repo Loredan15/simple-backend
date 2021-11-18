@@ -15,25 +15,21 @@
 <body>
 
 <div class="container" ng-controller="indexController">
-    <h3>Список студентов</h3>
+    <h3>Список продуктов:</h3>
     <table class="table table-hover" cellpadding="0" cellspacing="0">
         <tr>
             <td>ID</td>
-            <td>Имя студента</td>
-            <td>Балл</td>
-            <td>Действие</td>
+            <td>Название продукта</td>
+            <td>Стоимость</td>
+            <td>Удалить</td>
         </tr>
         <tbody>
-        <tr ng-repeat="s in StudentsList">
-            <td>{{s.id}}</td>
-            <td>{{s.name}}</td>
+        <tr ng-repeat="product in ProductsList">
+            <td>{{product.id}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.cost}}</td>
             <td>
-                <button class="btn btn-primary" ng-click="changeScore(s.id, -5)">-</button>
-                {{s.score}}
-                <button class="btn btn-primary" ng-click="changeScore(s.id, 5)">+</button>
-            </td>
-            <td>
-                <button class="btn btn-danger" ng-click="deleteStudent(s.id)">Исключить</button>
+                <button class="btn btn-danger" ng-click="deleteProduct(product.id)">Удалить продукт</button>
             </td>
         </tr>
         </tbody>
